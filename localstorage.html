@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            window.localStorage.clear(); //清除所有的变量和值
+            window.localStorage.a = 100;
+            window.localStorage["b"] = 200;
+            window.localStorage.setItem("c", 300);
+            console.log("window.localStorage.a=" + window.localStorage.a);
+            console.log("window.localStorage['b']=" + window.localStorage["b"]);
+            console.log("window.localStorage.getItem('c')=" + window.localStorage.getItem("c"));
+            console.log(window.localStorage);
+            console.log(typeof window.localStorage);
+            for (var i = 0; i < window.localStorage.length; i++) {
+                var key1 = window.localStorage.key(i);
+                var key2 = window.localStorage.getItem(key1);
+                console.log("字段名：" + key1 + " 值：" + key2);
+            }
+            var casl = {};
+            casl.username = "wangsan";
+            casl.password = "1234";
+
+            window.localStorage.setItem('user', JSON.stringify(casl));
+            var acsl = JSON.parse(window.localStorage.getItem('user'));
+
+            console.log(acsl.username + "的密码是" + acsl.password);
+
+            console.log()
+
+            console.log(typeof window.localStorage.a);
+            console.log(typeof window.localStorage['b']);
+            console.log(typeof window.localStorage.getItem('c'));
+
+
+            console.log("空了：" + window.localStorage);
+            window.localStorage.SB = "我是你大爷!";
+            window.localStorage.aaa = "this is test!";
+            window.localStorage.removeItem("aaa");
+
+            console.log("-------------------------------------------------");
+            var storage = window.localStorage;
+            var data = {
+                name: 'xiecanyong',
+                sex: 'man',
+                hobby: 'program'
+            };
+            var d = JSON.stringify(data);
+            console.log(typeof d);
+            storage.setItem("data", d);
+            console.log(storage.data);
+
+            var json = storage.getItem("data");
+            var jsonObj = JSON.parse(json);
+            console.log(typeof jsonObj);
+            console.log(storage.data);
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
