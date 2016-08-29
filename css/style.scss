@@ -1,95 +1,200 @@
 @charset "utf-8";
 
+html {
+  font-size: 625%;
+}
+
+$height: 1rem;
 $button_txt: #8f8f8f;
-$bg-white:#fff;
-ion-header-bar {
-  padding: 0;
-  padding-left: 10px;
+$bg-white: #fff;
+ion-header-bar, .bar {
+  padding: 0 0.1*$height;
+
+  .title {
+    display: none;
+  }
 
   .buttons {
-    top: 0;
+    width: 120px;
+    right: 10px;
+
+    button {
+      width: 40px;
+    }
+
+    button:first-child {
+      margin-right: 30px;
+    }
+
+    .new-search {
+      height: 33px;
+      display: block;
+    }
+    .lives-icon {
+      height: 25px;
+      display: block;
+    }
+
   }
   .logo {
     height: 44px;
     display: block;
-    position: absolute;
-    top: 0;
-    left: 15px;
   }
 
-  .new-search {
-    height: 33px;
-    display: block;
-    position: absolute;
-    top: 5px;
-    right: 80px;
-  }
-  .lives-icon {
-    height: 25px;
-    display: block;
-    position: absolute;
-    top: 8px;
-    right: 15px;
-  }
 }
 
 /*次级tab导航标签*/
 .nav-scroll {
-  width: 180%;
+  width: 200%;
   height: 35px;
   position: absolute;
   line-height: 35px;
 
 }
 
-
-ion-scroll {
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  /*overflow: hidden;*/
-
-}
-
-.drop-tag {
-  height: 35px;
-  width: 44px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: $bg-white;
-  z-index: 2;
-  &:after {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    content:'';
-    display: block;
-    height: 15px;
-    width: 15px;
-    border-right: 2px solid $button_txt;
-    border-bottom: 2px solid $button_txt;
-    transform: rotate(45deg);
-    background: $bg-white;
-
-  }
-}
-
-
-.sub-button-bar {
-  width: 200%;
-  height: 35px;
-  line-height: 35px;
-  position: relative;
-  .button {
-    width: 20%;
-    display: block;
-    color: $button_txt;
-    z-index: 1;
-  }
-
-
-}
-
 //向下的展开菜单按钮
 
+/*副标题*/
+.bar-subheader {
+  height: 35px;
+  ion-scroll {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    /*overflow: hidden;*/
+
+  }
+
+  .drop-tag {
+    height: 34px;
+    width: 44px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: $bg-white;
+    z-index: 2;
+    &:after {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      content: '';
+      display: block;
+      height: 12px;
+      width: 12px;
+      border-right: 2px solid $button_txt;
+      border-bottom: 2px solid $button_txt;
+      transform: rotate(45deg);
+      background: $bg-white;
+
+    }
+  }
+
+  ion-content {
+    top: 79px;
+  }
+  .sub-button-bar {
+    width: 200%;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    //transform: translateX(-80%);
+
+    .button {
+      width: 20%;
+      display: block;
+      color: $button_txt;
+      z-index: 1;
+      opacity: 1;
+    }
+
+    .active {
+      border-bottom: 2px solid #f00;
+      color: #f00;
+    }
+  }
+}
+
+/*页面主体部分*/
+
+.has-subheader {
+  top: 70px;
+}
+
+//轮播图
+
+.slider {
+  height: 2.8*$height;
+  .box {
+    height: 2.8*$height;
+    img {
+      height: 2.8*$height;
+      width: 100%;
+      display: block;
+    }
+  }
+  .slider-pager {
+    text-align: right;
+    padding-right: 15px;
+    height: 30px;
+  }
+
+  .active {
+    color: #fff;
+  }
+
+  .icon:before {
+    content: '.';
+    font-size: 30px;
+    line-height: 1;
+  }
+}
+
+//详情页
+
+.con{
+  line-height: 180%;
+}
+.con img{
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.loading {
+  text-align: center;
+  margin-top: 200px;
+}
+
+
+//新闻详情页
+
+ion-header-bar {
+  .icon{
+    width: 44px;
+  }
+}
+
+ion-footer-bar {
+  display: flex;
+  .item-input {
+    flex: 1;
+    padding-right: 120px;
+  }
+
+  .button-small {
+    margin-right: 0;
+       height: 24px;
+       width: 24px;
+    font-size: 12px;
+    position: relative;
+    .comment {
+      position: absolute;
+      top: 5px;
+      left: 35px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+  }
+}

@@ -1,0 +1,43 @@
+<ion-view title="">
+    <ion-header-bar class="bar-assertive">
+
+        <button class="button button-clear icon ion-android-arrow-back" ng-click="goBack();">
+
+        </button>
+
+        <h1 class="title"></h1>
+
+        <button class="button button-clear icon ion-android-more-vertical pull-right">
+        </button>
+
+    </ion-header-bar>
+    <ion-content padding="true"  >
+
+        <p ng-if="isLoading"  class="loading" >
+            <img src="img/loader.gif" alt="loading">
+        </p>
+
+        <h2 class="title">
+            {{item.title}}
+        </h2>
+        <div class="con" ng-bind-html="item.content">
+        </div>
+
+    </ion-content>
+    <ion-footer-bar  class="bar-light ">
+        <label class=" item-input">
+            <input type="text" placeholder="写跟帖">
+        </label>
+        <div class="buttons pull-right">
+            <button class="button  l  button-clear button-assertive button-smal">
+                <i class="  icon ion-android-textsms"></i>
+                <i class="comment">66</i>
+            </button>
+
+            <button class="button button-clear ">
+                <i class="  icon ion-android-share-alt"></i>
+            </button>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

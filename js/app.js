@@ -39,17 +39,16 @@ app.config(function ($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
             }
         })
 
-        //
-        //.state('tab.news_content', {
-        //    url: '/news_content/:aid',
-        //    views: {
-        //        /*定义视图展示的页面*/
-        //        'tab-news': {
-        //            templateUrl: 'templates/news_content.html',
-        //            controller: 'newsContentController'
-        //        }
-        //    }
-        //})
+        .state('tab.news_content', {
+            url: '/news_content/:aid',
+            views: {
+                /*定义视图展示的页面*/
+                'tab-news': {
+                    templateUrl: 'templates/news_content.html',
+                    controller: 'newsContentController'
+                }
+            }
+        })
         .state('tab.lives', {
             url: '/lives',
             views: {

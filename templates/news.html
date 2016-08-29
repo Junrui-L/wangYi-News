@@ -1,22 +1,28 @@
 <ion-view>
     <!--页面顶部的按钮-->
-    <ion-header-bar class="bar-assertive">
-        <div class="buttons">
-            <img class="logo" src="img/images/logo.png" alt="">
-        </div>
-        <div class="buttons">
-            <img class="new-search" src="img/images/akb.png" alt="">
+    <ion-header-bar class="bar-assertive pull-left">
+
+            <button class="button button-clear">
+                <img class="logo" src="img/images/logo.png" alt="">
+            </button>
+
+        <!--<h1 class="title"></h1>-->
+        <div class="buttons pull-right">
+            <button class="button button-clear " ng-click="goSearch()">
+                <img class="new-search" src="img/images/akb.png" alt="">
+            </button>
+
+            <button class="button button-clear">
+                <img class="lives-icon" src="img/images/a6u.png" alt="">
+            </button>
 
         </div>
-        <div class="buttons">
-            <img class="lives-icon" src="img/images/a6u.png" alt="">
-        </div>
+
     </ion-header-bar>
     <div class="bar bar-subheader">
-        <!--<h2 class="title">Sub Header</h2>-->
         <ion-scroll scrollbar-x="false" scrollbar-y="false" direction="x">
             <div class="button-bar sub-button-bar">
-                <a class="button button-clear">头条</a>
+                <a class="button button-clear active">头条</a>
                 <a class="button button-clear">精选</a>
                 <a class="button button-clear">娱乐</a>
                 <a class="button button-clear">体育</a>
@@ -32,28 +38,25 @@
         </ion-scroll>
         <div class="drop-tag"></div>
     </div>
-
-
-    <!--<ion-nav-buttons side="left">-->
-    <!--<img src="img/images/logo.png" alt="logo">-->
-    <!--</ion-nav-buttons>-->
-    <!--<ion-nav-buttons side="right">-->
-    <!--<button class="button button-clear">-->
-    <!--<img class="new-search" src="img/images/akb.png" alt="logo">-->
-    <!--</button>-->
-    <!--<button class="button button-clear">-->
-    <!--<img class="lives-icon" src="img/images/a6u.png" alt="logo">-->
-    <!--</button>-->
-    <!--</ion-nav-buttons>-->
-
-
-
-
-
     <ion-content class="has-subheader">
-        <!--页面导航栏-->
+        <!--轮播图-->
+        <ion-slide-box delegate-handle="slideBox" class="slideContent" auto-play="true" slide-interval="2000"">
+            <ion-slide ng-repeat="item in items">
+                <div class="box" ><img src="{{item}}" alt="" /></div>
+            </ion-slide>
+        </ion-slide-box>
 
-        新闻
+        <!--新闻列表-->
+        <ion-list>
+            <ion-item class=" item-thumbnail-left con" ng-repeat="item in lists" href ='#/tab/news_content/{{item.aid}}'>
+                <img ng-src="http://www.phonegap100.com/data/attachment/{{item.pic}}"  onerror ="this.src = 'img/ionic.png'" alt="{{item.title}}">
+                <h2>{{item.title}}</h2>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+            on-infinite="loadMore()"
+            distance="1%" ng-if ='hasListData()'>
+        </ion-infinite-scroll>
     </ion-content>
 
 </ion-view>
