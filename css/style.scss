@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+$button_txt: #8f8f8f;
+$bg-white:#fff;
+ion-header-bar {
+  padding: 0;
+  padding-left: 10px;
+
+  .buttons {
+    top: 0;
+  }
+  .logo {
+    height: 44px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 15px;
+  }
+
+  .new-search {
+    height: 33px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 80px;
+  }
+  .lives-icon {
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+  }
+}
+
+/*次级tab导航标签*/
+.nav-scroll {
+  width: 180%;
+  height: 35px;
+  position: absolute;
+  line-height: 35px;
+
+}
+
+
+ion-scroll {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  /*overflow: hidden;*/
+
+}
+
+.drop-tag {
+  height: 35px;
+  width: 44px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: $bg-white;
+  z-index: 2;
+  &:after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content:'';
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-right: 2px solid $button_txt;
+    border-bottom: 2px solid $button_txt;
+    transform: rotate(45deg);
+    background: $bg-white;
+
+  }
+}
+
+
+.sub-button-bar {
+  width: 200%;
+  height: 35px;
+  line-height: 35px;
+  position: relative;
+  .button {
+    width: 20%;
+    display: block;
+    color: $button_txt;
+    z-index: 1;
+  }
+
+
+}
+
+//向下的展开菜单按钮
+

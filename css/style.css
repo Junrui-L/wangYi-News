@@ -1,3 +1,71 @@
+@charset "UTF-8";
+ion-header-bar {
+  padding: 0;
+  padding-left: 10px; }
+  ion-header-bar .buttons {
+    top: 0; }
+  ion-header-bar .logo {
+    height: 44px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 15px; }
+  ion-header-bar .new-search {
+    height: 33px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 80px; }
+  ion-header-bar .lives-icon {
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 15px; }
 
+/*次级tab导航标签*/
+.nav-scroll {
+  width: 180%;
+  height: 35px;
+  position: absolute;
+  line-height: 35px; }
+
+ion-scroll {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  /*overflow: hidden;*/ }
+
+.drop-tag {
+  height: 35px;
+  width: 44px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  z-index: 2; }
+  .drop-tag:after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: '';
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-right: 2px solid #8f8f8f;
+    border-bottom: 2px solid #8f8f8f;
+    transform: rotate(45deg);
+    background: #fff; }
+
+.sub-button-bar {
+  width: 200%;
+  height: 35px;
+  line-height: 35px;
+  position: relative; }
+  .sub-button-bar .button {
+    width: 20%;
+    display: block;
+    color: #8f8f8f;
+    z-index: 1; }
 
 /*# sourceMappingURL=style.css.map */
