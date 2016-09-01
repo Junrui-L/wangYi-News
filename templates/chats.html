@@ -1,6 +1,164 @@
 <ion-view title="话题">
-    <ion-content>
 
+    <ion-header-bar class="bar-assertive ">
+        <ul class="chats-tab">
+            <li ng-click="changeTab()">
+                <a  class="active" href="#tab1">问吧</a>
+            </li>
+            <li ng-click="changeTab()">
+                <a href="#tab2" >话题</a>
+            </li>
+            <li ng-click="changeTab()">
+                <a href="#tab3">关注</a>
+            </li>
+        </ul>
+        <div class="buttons pull-right">
+            <button class="button button-clear " ng-click="goSearch()">
+               <i class="icon ion-ios-search"></i>
+            </button>
+
+            <button class="button button-clear">
+                <i class="icon ion-person"></i>
+            </button>
+
+        </div>
+    </ion-header-bar>
+
+    <!--中间tab页面-->
+    <ion-content>
+        <div id="tab1" class="chats_content" >
+            <ul class="lbs-list clear">
+                <li><a href="javascript:;">
+                    <span class="icon-film">影</span>
+                    <em class="icon-n">电影</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">团</span>
+                    <em class="icon-group">团购</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">卖</span>
+                    <em class="icon-w">外卖</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">车</span>
+                    <em class="icon-d">打车</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">店</span>
+                    <em class="icon-j">酒店</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">食</span>
+                    <em class="icon-m">美食</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">K</span>
+                    <em class="icon-k">KTV</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">充</span>
+                    <em class="icon-c">充值</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">影</span>
+                    <em class="icon-n">电影</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">团</span>
+                    <em class="icon-group">团购</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">卖</span>
+                    <em class="icon-w">外卖</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">车</span>
+                    <em class="icon-d">打车</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">店</span>
+                    <em class="icon-j">酒店</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">食</span>
+                    <em class="icon-m">美食</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">K</span>
+                    <em class="icon-k">KTV</em>
+                </a></li>
+                <li><a href="javascript:;">
+                    <span class="icon-film">充</span>
+                    <em class="icon-c">充值</em>
+                </a></li>
+            </ul>
+        </div>
+        <div id="tab2" class="chats_content" >
+            <div class="search-nav clear">
+                <a href="javascript:;"><span class="new">新闻</span></a>
+                <a href="javascript:;"> <span class="story">小说</span></a>
+                <a href="javascript:;"> <span class="video">视频</span></a>
+                <a href="javascript:;"><span class="nuom">糯米</span></a>
+                <a href="javascript:;"><span class="map">地图</span></a>
+                <a href="javascript:;" class="more-m"><span class="more">更多</span></a>
+                <a href="javascript:;"><span class="new">新闻</span></a>
+                <a href="javascript:;"> <span class="story">小说</span></a>
+                <a href="javascript:;"> <span class="video">视频</span></a>
+                <a href="javascript:;"><span class="nuom">糯米</span></a>
+                <a href="javascript:;"><span class="map">地图</span></a>
+            </div>
+        </div>
+
+        <div id="tab3" class="chats_content" >
+            <div class="youCare">
+                <p>您关注的话题可能出现在这里</p>
+                <button class="button button-assertive">去关注</button>
+            </div>
+            <div class="we-see">
+                <i class="icon ion-ios-paper a"></i>大家都在看
+            </div>
+
+            <ion-list>
+                <ion-item class="item-avatar">
+                    <img src="img/max.png">
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                    <div class="button button-clear button-assertive pull-right">
+                        <i class="icon ion-ios-plus"></i>
+                    </div>
+                </ion-item>
+                <ion-item class="item-divider"></ion-item>
+                <ion-item class="item-avatar">
+                    <img src="img/max.png">
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                    <div class="button button-clear button-assertive pull-right">
+                        <i class="icon ion-ios-plus"></i>
+                    </div>
+                </ion-item>
+                <ion-item class="item-divider"></ion-item>
+                <ion-item class="item-avatar">
+                    <img src="img/max.png">
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                    <div class="button button-clear button-assertive pull-right">
+                        <i class="icon ion-ios-plus"></i>
+                    </div>
+                </ion-item>
+                <ion-item class="item-divider"></ion-item>
+                <ion-item class="item-avatar">
+                    <img src="img/max.png">
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                    <div class="button button-clear button-assertive pull-right">
+                        <i class="icon ion-ios-plus"></i>
+                    </div>
+                </ion-item>
+                <ion-item class="item-divider"></ion-item>
+
+            </ion-list>
+        </div>
     </ion-content>
 
 </ion-view>

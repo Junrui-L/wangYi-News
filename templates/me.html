@@ -1,6 +1,57 @@
 <ion-view title="我">
-    <ion-content>
-        我
+    <div class="my-header assertive">
+        <button class="button button-clear icon-left ion-ios-gear pull-right" ng-click="openSetting()">设置</button>
+        <img src="img/images/night_alf.png" alt="">
+        <div class=" login" ng-click="openLogin()">立即登录</div>
+        <p class="tips">赢积分，抢大礼！</p>
+    </div>
+    <ul class="my-info">
+        <li><i class="icon ion-ios-clock"></i><span>阅读</span></li>
+        <li><i class="icon ion-android-favorite"></i><span>收藏</span></li>
+        <li><i class="icon ion-edit"></i><span>跟帖</span></li>
+        <li><i class="icon ion-soup-can"></i><span>金币</span></li>
+    </ul>
+    <ion-content class="has-myheader">
+        <ion-list>
+            <ion-item class="item-divider"></ion-item>
+            <ion-item class=" ion-android-textsms  assertive">
+                <span>我的消息</span>
+            </ion-item>
+            <ion-item class="item-divider"></ion-item>
+            <ion-item class="ion-soup-can energized">
+
+                <span>金币商城</span>
+            </ion-item>
+            <ion-item class="ion-android-textsms assertive">
+                <span>金币任务</span>
+            </ion-item>
+            <ion-item class="ion-calendar assertive">
+                <span>我的钱包</span>
+            </ion-item>
+            <ion-item class="item-divider"></ion-item>
+                <li class="item ion-contrast item-toggle positive">
+                    <span>夜间模式</span>
+                    <label class="toggle toggle-calm">
+                        <input type="checkbox">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+            <ion-item class="ion-upload calm">
+                <span>离线阅读</span>
+            </ion-item>
+            <ion-item class="ion-social-dribbble royal">
+                <span>活动广场</span> <b>单身狗小编晒照片相亲</b>
+            </ion-item>
+            <ion-item class="ion-android-mail balanced">
+                <span>我的邮箱</span>
+            </ion-item>
+            <ion-item class="ion-clipboard positive">
+                <span>意见反馈</span>
+            </ion-item>
+
+        </ion-list>
     </ion-content>
 
 </ion-view>

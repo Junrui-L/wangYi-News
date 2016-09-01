@@ -5,9 +5,7 @@
 
         </button>
 
-        <h1 class="title"></h1>
-
-        <button class="button button-clear icon ion-android-more-vertical pull-right">
+        <button class="button button-clear icon ion-android-more-vertical pull-right" ng-click="openPopover($event)">
         </button>
 
     </ion-header-bar>
@@ -26,10 +24,11 @@
     </ion-content>
     <ion-footer-bar  class="bar-light ">
         <label class=" item-input">
+            <i class="icon ion-edit placeholder-icon"></i>
             <input type="text" placeholder="写跟帖">
         </label>
         <div class="buttons pull-right">
-            <button class="button  l  button-clear button-assertive button-smal">
+            <button class="button button-clear button-assertive button-small">
                 <i class="  icon ion-android-textsms"></i>
                 <i class="comment">66</i>
             </button>

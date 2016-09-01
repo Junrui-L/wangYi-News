@@ -68,3 +68,20 @@ angular.module('myApp.services', [])
 
 
     })
+
+    //保存url地址
+    .factory('pageCache',function($cacheFactory){
+        return $cacheFactory('page');
+    })
+
+    .factory('commonFactory',function(pageCache,$location){
+        return{
+            backUrl:function(url){
+                pageCache.put('url',url);//这个用来保存页面
+            },
+
+            goBack:function(){
+                $location.path(pageCache.get('url'));//这个用来跳转页面
+            }
+        }
+    })
