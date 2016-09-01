@@ -1,0 +1,125 @@
+<ion-view>
+    <!--页面顶部的按钮-->
+    <ion-header-bar class="bar-assertive pull-left">
+
+        <button class="button button-clear">
+            <img class="logo" src="img/images/logo.png" alt="">
+        </button>
+
+        <!--<h1 class="title"></h1>-->
+        <div class="buttons pull-right">
+            <button class="button button-clear " ng-click="goSearch()">
+                <img class="new-search" src="img/images/akb.png" alt="搜索">
+            </button>
+
+            <button class="button button-clear" ng-click="goLives()">
+                <img class="lives-icon" src="img/images/a6u.png" alt="视频">
+            </button>
+
+        </div>
+
+    </ion-header-bar>
+    <div class="bar bar-subheader">
+        <ion-scroll scrollbar-x="false" scrollbar-y="false" direction="x">
+            <div class="button-bar sub-button-bar">
+                <a class="button button-clear active">头条</a>
+                <a class="button button-clear">精选</a>
+                <a class="button button-clear">娱乐</a>
+                <a class="button button-clear">体育</a>
+                <a class="button button-clear">网易号</a>
+                <a class="button button-clear">深圳</a>
+                <a class="button button-clear">视频</a>
+                <a class="button button-clear">财经</a>
+                <a class="button button-clear">科技</a>
+                <a class="button button-clear">汽车</a>
+                <a class="button button-clear"></a>
+            </div>
+        </ion-scroll>
+        <div class="changes">切换栏目</div>
+        <div class="drop-tag" ng-click="goTags();"></div>
+    </div>
+    <ion-content class="has-subheader">
+        <div class="news-container">
+            <!--轮播图-->
+            <ion-slide-box delegate-handle="slideBox" class="slideContent" auto-play="true" slide-interval="2000"
+            ">
+            <ion-slide ng-repeat="item in items">
+                <div class="box"><img src="{{item}}" alt=""/></div>
+            </ion-slide>
+            </ion-slide-box>
+
+            <!--新闻列表-->
+            <ion-list>
+                <ion-item class=" item-thumbnail-left con" ng-repeat="item in lists"
+                          href='#/tab/news_content/{{item.aid}}'>
+                    <img ng-src="http://www.phonegap100.com/data/attachment/{{item.pic}}"
+                         onerror="this.src = 'img/ionic.png'" alt="{{item.title}}">
+                    <h2>{{item.title}}</h2>
+                    <p>新闻热点
+                        <span ng-click="showAlert();event.stopPropagation();">2.7万跟帖 <em ></em></span>
+                    </p>
+
+
+                </ion-item>
+            </ion-list>
+            <ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="1%" ng-if='hasListData()'>
+            </ion-infinite-scroll>
+        </div>
+        <!--下拉放标签的-->
+        <div class="tags-container">
+            <div class="tags-container">
+                <span class="tags">头条</span>
+                <span class="tags">精选</span>
+                <span class="tags">娱乐</span>
+                <span class="tags">体育</span>
+                <span class="tags">网易号</span>
+                <span class="tags">北京</span>
+                <span class="tags">财经</span>
+                <span class="tags">科技</span>
+                <span class="tags">头条</span>
+                <span class="tags">精选</span>
+                <span class="tags">娱乐</span>
+                <span class="tags">体育</span>
+                <span class="tags">网易号</span>
+                <span class="tags">北京</span>
+                <span class="tags">财经</span>
+                <span class="tags">科技</span>
+                <span class="tags">头条</span>
+                <span class="tags">精选</span>
+                <span class="tags">娱乐</span>
+                <span class="tags">体育</span>
+                <span class="tags">网易号</span>
+                <span class="tags">北京</span>
+                <span class="tags">财经</span>
+                <span class="tags">科技</span>
+            </div>
+
+            <p class="tips tips-right">长按排序或删除</p>
+            <p class="tips tips-left">点击添加更多栏目</p>
+            <span class="tags">头条</span>
+            <span class="tags">精选</span>
+            <span class="tags">娱乐</span>
+            <span class="tags">体育</span>
+            <span class="tags">网易号</span>
+            <span class="tags">北京</span>
+            <span class="tags">财经</span>
+            <span class="tags">科技</span>
+            <span class="tags">头条</span>
+            <span class="tags">精选</span>
+            <span class="tags">娱乐</span>
+            <span class="tags">体育</span>
+            <span class="tags">体育</span>
+            <span class="tags">网易号</span>
+            <span class="tags">北京</span>
+            <span class="tags">财经</span>
+            <span class="tags">科技</span>
+            <span class="tags">头条</span>
+
+        </div>
+
+
+    </ion-content>
+
+</ion-view>
