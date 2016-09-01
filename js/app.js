@@ -2,7 +2,7 @@
  * Created by Administrator on 2016/8/27 0027.
  */
 
-var app = angular.module('myApp', ['ionic', 'myApp.controller']);
+var app = angular.module('myApp', ['ionic', 'myApp.controller','starter.directive','myApp.services']);
 app.config(function ($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
     /*不同平台的默认样式配置*/
 

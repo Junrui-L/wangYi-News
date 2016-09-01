@@ -20,9 +20,8 @@ angular.module('myApp.controller', ['myApp.services'])
 
         /*接收显示数据*/
         $scope.$on('$ionicView.beforeEnter', function () {
-            $rootScope.hideTabs = '';
             commonFactory.backUrl($location.url());
-            /*显示下边的 tab菜单*/
+            /*记录url地址*/
         });
 
         $scope.$on('$ionicView.afterEnter', function () {
@@ -111,11 +110,8 @@ angular.module('myApp.controller', ['myApp.services'])
 
     .controller('newsSearchController', function ($scope, $rootScope, $state,commonFactory) {
         /*隐藏下边的tab菜单*/
-        $rootScope.hideTabs = 'tabs-item-hide';
-        //$scope.goBack = function () {
-        //    $state.go('tab.news');
-        //};
 
+        /*返回上一级菜单*/
         $scope.goBack=function(){
             commonFactory.goBack();
         };
@@ -124,16 +120,15 @@ angular.module('myApp.controller', ['myApp.services'])
 
     .controller('newsLivesController', function ($scope, $rootScope, $state,commonFactory) {
         /*隐藏下边的tab菜单*/
-        $rootScope.hideTabs = 'tabs-item-hide';
+        /*返回上一级菜单*/
         $scope.goBack = function () {
             commonFactory.goBack();
         };
 
     })
     .controller('newsContentController', function ($scope, $rootScope, $state, $stateParams,$ionicPopover, NewsContentService, $sce) {
-        $rootScope.hideTabs = 'tabs-item-hide';
         /*隐藏下边的 tab菜单*/
-
+        /*返回上一级菜单*/
         var aid = $stateParams.aid;
         //console.log(aid)
         $scope.isLoading = true;

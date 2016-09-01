@@ -633,6 +633,18 @@ ion-list .item-input button.login-button {
   margin: 0;
   font-size: 14px; }
 
+/*拖动按钮的样式调整*/
+.toggle {
+  top: 16px; }
+  .toggle .track {
+    height: 3px;
+    width: 42px; }
+    .toggle .track .handle {
+      width: 20px;
+      height: 20px; }
+  .toggle input:checked + .track .handle {
+    background: #f00; }
+
 .top-setting {
   box-sizing: border-box;
   padding-left: 10px; }

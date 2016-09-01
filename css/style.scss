@@ -864,6 +864,28 @@ ion-list .item-input {
   font-size: 14px;
 }
 
+/*拖动按钮的样式调整*/
+
+.toggle {
+
+  top: 16px;
+
+  .track {
+    height: 3px;
+    width: 42px;
+    .handle{
+      width: 20px;
+      height: 20px;
+
+    }
+  }
+
+   input:checked+.track .handle {
+    background: #f00;
+  }
+}
+
+
 .top-setting {
   box-sizing: border-box;
   padding-left: 10px;
