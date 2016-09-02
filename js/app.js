@@ -20,6 +20,9 @@ app.config(function ($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
     $ionicConfigProvider.platform.ios.views.transition('ios');
     $ionicConfigProvider.platform.android.views.transition('android');
     $ionicConfigProvider.backButton.previousTitleText(false);
+    $ionicConfigProvider.backButton.text('');
+
+
 
     /*配置路由*/
     $stateProvider.state('tab', {

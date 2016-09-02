@@ -20,6 +20,8 @@ angular.module('myApp.controller', ['myApp.services'])
 
         /*接收显示数据*/
         $scope.$on('$ionicView.beforeEnter', function () {
+
+            $ionicSlideBoxDelegate.next();
             commonFactory.backUrl($location.url());
             /*记录url地址*/
         });
