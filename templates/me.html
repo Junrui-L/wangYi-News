@@ -1,9 +1,18 @@
 <ion-view title="我">
-    <div class="my-header assertive">
+    <div class="my-header assertive user" ng-show="noLogin">
         <button class="button button-clear icon-left ion-ios-gear pull-right" ng-click="openSetting()">设置</button>
         <img src="img/images/night_alf.png" alt="">
         <div class=" login" ng-click="openLogin()">立即登录</div>
         <p class="tips">赢积分，抢大礼！</p>
+    </div>
+<!--/*登录后的页面*/-->
+    <div class="my-header assertive user" ng-show="isLogin">
+        <button class="button button-clear icon-left ion-ios-gear pull-right" ng-click="openSetting()">设置</button>
+        <img src="img/max.png" width="35" height="35" alt="">
+        <div class="username" style="color: #fff">
+            {{user.userName}}
+        </div>
+        <div class=" login" ng-click="logout();">退出登录</div>
     </div>
     <ul class="my-info">
         <li><i class="icon ion-ios-clock"></i><span>阅读</span></li>

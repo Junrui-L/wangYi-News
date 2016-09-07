@@ -69,11 +69,11 @@ angular.module('myApp.services', [])
 
     })
 
-    //保存url地址
+    //保存url地址，给跳转用
     .factory('pageCache',function($cacheFactory){
         return $cacheFactory('page');
     })
-
+    //页面跳转
     .factory('commonFactory',function(pageCache,$location){
         return{
             backUrl:function(url){
@@ -84,4 +84,20 @@ angular.module('myApp.services', [])
                 $location.path(pageCache.get('url'));//这个用来跳转页面
             }
         }
+    })
+
+    //登录跳转
+    .factory('loginStorage', function () {
+        return {
+            set: function (key, data) {
+                return window.localStorage.setItem(key, window.JSON.stringify(data));
+            },
+            get: function (key) {
+
+                return window.JSON.parse(window.localStorage.getItem(key));
+            },
+            remove: function (key) {
+                return window.localStorage.removeItem(key);
+            }
+        };
     })

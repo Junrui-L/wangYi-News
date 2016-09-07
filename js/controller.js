@@ -21,7 +21,7 @@ angular.module('myApp.controller', ['myApp.services'])
         /*接收显示数据*/
         $scope.$on('$ionicView.beforeEnter', function () {
 
-            $ionicSlideBoxDelegate.next();
+            //$ionicSlideBoxDelegate.next();
             commonFactory.backUrl($location.url());
             /*记录url地址*/
         });
@@ -180,7 +180,7 @@ angular.module('myApp.controller', ['myApp.services'])
 
     })
 
-    .controller('livesController', function ($scope, $rootScope, $state) {
+    .controller('livesController', function ($scope, $rootScope) {
 
         //显示tab菜单
         $scope.$on('$ionicView.beforeEnter', function () {
@@ -263,7 +263,7 @@ angular.module('myApp.controller', ['myApp.services'])
 
     })
 
-    .controller('meController', function ($scope, $rootScope, $ionicModal, $state) {
+    .controller('meController', function ($scope, $rootScope, $ionicModal,$state, loginStorage) {
 
 
         //登录页面
@@ -279,21 +279,85 @@ angular.module('myApp.controller', ['myApp.services'])
         };
         $scope.closeLogin = function () {
             $scope.login.hide();
+            $scope.login.remove();
+        };
+
+        var newUser = {
+            'userName': 'zhangsan',
+            'pwd': '123456',
+        };
+
+        //$scope.$on('$destroy', function () {
+        //    $scope.modal.remove();
+        //
+        //
+        //});
+         //当隐藏的模型时执行动作
+        $scope.$on('modal.show', function () {
+
+            console.log("111111111111");
+        });
+
+
+        $scope.$on('modal.hide', function () {
+
+            console.log("222222222222");
+        });
+        // 当移动模型时执行动作
+        $scope.$on('modal.removed', function () {
+            // 执行动作
+            console.log("3333333333333");
+
+        });
+
+        /*模拟用户登录*/
+
+        //初始化登录的键值对
+        var user = {};
+        $scope.user = {
+            'userName': '',
+            'passWord': ''
+        };
+
+        $scope.noLogin = true;
+        $scope.isLogin = false;
+        //登录时存储键值对到localStrorage
+        $scope.logIn = function () {
+            //获取输入的账号密码的值
+            user.userName = $scope.user.userName;
+            user.passWord = $scope.user.passWord;
+            loginStorage.set('user', user);
+            console.log(user);
+
+            $scope.login.hide();
+
+            $scope.noLogin = false;
+            $scope.isLogin = true;
+
+            //if(loginStorage.get('user')){
+            //    $scope.noLogin = false;
+            //    $scope.isLogin = true;
+            //}
+            //
+            //if (user.userName == newUser.userName && newUser.pwd == user.passWord) {
+            //
+            //}
+            // else {
+            //    alert('请重新登录！');
+            //}
+            //
+            //console.log('user')
         };
 
 
-        //当我们用到模型时，清除它！
-        $scope.$on('$destroy', function () {
-            $scope.modal.remove();
-        });
-        // 当隐藏的模型时执行动作
-        $scope.$on('modalc.hide', function () {
+        //退出登录
 
-        });
-        // 当移动模型时执行动作
-        $scope.$on('modalc.removed', function () {
-            // 执行动作
-        });
+        $scope.logout = function () {
+            $scope.noLogin = true;
+            $scope.isLogin = false;
+        }
+
+
 
         /*设置页面*/
         $ionicModal.fromTemplateUrl('templates/me/setting.html', {
